@@ -154,7 +154,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
         print(new_instance.id)
         storage.save()
-        if (len(args) > 2):
+        if (len(args) > 1):
             self.todict(args, new_instance.id)
 
     def help_create(self):
