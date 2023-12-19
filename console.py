@@ -114,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the emptyline method of CMD """
         pass
 
-    def todict(self, args, ids):
+    def todict(self, args):
         new_dict = {}
         for arg in args:
             if "=" in arg:
@@ -132,9 +132,7 @@ class HBNBCommand(cmd.Cmd):
                         except ValueError:
                             continue
                 new_dict[key] = value
-        sdic = str(new_dict)
-        up = ' '.join([args[0], ids, sdic])
-        self.do_update(up)
+        return new_dict
 
     def do_create(self, args):
         """ Create an object of any class"""
@@ -146,13 +144,11 @@ class HBNBCommand(cmd.Cmd):
         if not args[0] in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-
-        new_instance = HBNBCommand.classes[args[0]]()
+        d = self.todict(args[1:])
+        new_instance = HBNBCommand.classes[args[0]](**d)
         storage.save()
         print(new_instance.id)
         storage.save()
-        if (len(args) > 1):
-            self.todict(args, new_instance.id)
 
     def help_create(self):
         """ Help information for the create method """
