@@ -18,10 +18,6 @@ class BaseModel:
         id = Column(String(60), unique=True, nullable=False, primary_key=True)
         created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
         updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-    
-    """A base class for all hbnb models"""
-    def __init__(self, *args, **kwargs):
-        """Initialization of the base model"""
 
     def __init__(self, *args, **kwargs):
         '''to create new or existing instance'''
@@ -53,6 +49,8 @@ class BaseModel:
                           (str(type(self)).split('.')[-1]).split('\'')[0]})
         dictionary['created_at'] = self.created_at.isoformat()
         dictionary['updated_at'] = self.updated_at.isoformat()
+        if "_sa_instance_state" in dictionary:
+            del dictionary["_sa_instance_state"]
         return dictionary
     
     def delete(self):
