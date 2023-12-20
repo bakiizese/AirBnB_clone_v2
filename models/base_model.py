@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 import models
 from sqlalchemy import Column, String, DateTime
-from sqlalchemy.ext.declarative import  declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from os import getenv
 import sqlalchemy
 
@@ -13,15 +13,19 @@ if models.storage_t == "db":
 else:
     Base = object
 
+
 class BaseModel:
     if models.storage_t == "db":
-        id = Column(String(60), unique=True, nullable=False, primary_key=True)
-        created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-        updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+        id = Column(String(60), unique=True, nullable=False,
+                    primary_key=True)
+        created_at = Column(DateTime, nullable=False,
+                            default=datetime.utcnow())
+        updated_at = Column(DateTime, nullable=False,
+                            default=datetime.utcnow())
 
     def __init__(self, *args, **kwargs):
         '''to create new or existing instance'''
-        if not kwargs is None:
+        if kwargs is not None:
             for key in kwargs:
                 self.__dict__[key] = kwargs[key]
         self.id = str(uuid.uuid4())
@@ -52,7 +56,7 @@ class BaseModel:
         if "_sa_instance_state" in dictionary:
             del dictionary["_sa_instance_state"]
         return dictionary
-    
+
     def delete(self):
         """delete current"""
         models.storage.delete(self)

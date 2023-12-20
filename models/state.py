@@ -8,7 +8,8 @@ from os import getenv
 import models
 import sqlalchemy
 
-class State(BaseModel):
+
+class State(BaseModel, Base):
     if models.storage_t == "db":
         __tablename__ = 'states'
         name = Column(String(128), nullable=False)

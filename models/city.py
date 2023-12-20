@@ -6,6 +6,8 @@ from sqlalchemy.orm import relationship
 import sqlalchemy
 from os import getenv
 import models
+
+
 class City(BaseModel, Base):
     if models.storage_t == "db":
         __tablename__ = 'cities'
