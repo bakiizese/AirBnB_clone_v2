@@ -7,6 +7,7 @@ import sqlalchemy
 from os import getenv
 import models
 
+
 class Place(BaseModel, Base):
     """ A place to stay """
     if models.storage_t == 'db':
@@ -19,8 +20,8 @@ class Place(BaseModel, Base):
         number_bathrooms = Column(Integer, nullable=False, default=0)
         max_guest = Column(Integer, nullable=False, default=0)
         price_by_night = Column(Integer, nullable=False, default=0)
-        latitude = Column(Integer, nullable=False, default=0)
-        longitude = Column(Integer, nullable=False, default=0)
+        latitude = Column(Integer, nullable=False)
+        longitude = Column(Integer, nullable=False)
     else:
         city_id = ""
         user_id = ""
@@ -35,4 +36,5 @@ class Place(BaseModel, Base):
         amenity_ids = []
 
     def __init__(self, *args, **kwargs):
+        '''inits'''
         super().__init__(*args, **kwargs)
