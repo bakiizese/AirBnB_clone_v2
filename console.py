@@ -136,10 +136,10 @@ class HBNBCommand(cmd.Cmd):
                 new_dict[key] = value
         return new_dict
 
-    def do_create(self, args):
+    def do_create(self, arg):
         """ Create an object of any class"""
 
-        args = args.split()
+        args = arg.split()
         if not args[0]:
             print("** class name missing **")
             return
