@@ -28,9 +28,11 @@ class BaseModel:
         if kwargs is not None:
             for key in kwargs:
                 self.__dict__[key] = kwargs[key]
+        
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        self.save()
 
     def __str__(self):
         """Returns a string representation of the instance"""
@@ -46,7 +48,7 @@ class BaseModel:
         storage.save()
 
     def to_dict(self):
-        """Convert instance into dict format"""
+        """Convert instance into dict format
         dictionary = {}
         dictionary.update(self.__dict__)
         dictionary.update({'__class__':
@@ -55,7 +57,14 @@ class BaseModel:
         dictionary['updated_at'] = self.updated_at.isoformat()
         if "_sa_instance_state" in dictionary:
             del dictionary["_sa_instance_state"]
-        return dictionary
+
+        return dictionary"""
+        mydict = self.__dict__.copy()
+        mydict["created_at"] = mydict["created_at"].isoformat()
+        mydict["updated_at"] = mydict["updated_at"].isoformat()
+        mydict["__class__"] = self.__class__.__name__
+
+        return mydict
 
     def delete(self):
         """delete current"""

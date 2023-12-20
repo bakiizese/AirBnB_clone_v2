@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Console Module """
 import cmd
+import re
 import shlex
 import sys
 import models
@@ -149,7 +150,6 @@ class HBNBCommand(cmd.Cmd):
         new_instance = HBNBCommand.classes[args[0]](**d)
         storage.save()
         print(new_instance.id)
-        storage.save()
 
     def help_create(self):
         """ Help information for the create method """
@@ -250,8 +250,12 @@ class HBNBCommand(cmd.Cmd):
             return False
         for key in obj_dict:
             obj_list.append(str(obj_dict[key]))
+        dd = ' '.join(obj_list)
+        pattern = r"'_sa_instance_state': <[^>]+>, "
+        dd = re.sub(pattern, "", dd)
+
         print("[", end="")
-        print(", ".join(obj_list), end="")
+        print(dd, end='')
         print("]")
 
     def help_all(self):
