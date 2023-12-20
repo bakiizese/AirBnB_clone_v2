@@ -4,12 +4,15 @@ from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey
 from models.city import City
 from sqlalchemy.orm import relationship
+from os import getenv
+import models
+import sqlalchemy
 
 class State(BaseModel):
     if models.storage_t == "db":
         __tablename__ = 'states'
         name = Column(String(128), nullable=False)
-        cities = relationship("City", cascade="all, delete", backref="states")
+        cities = relationship("City", backref="state")
     else:
         name = ""
 
