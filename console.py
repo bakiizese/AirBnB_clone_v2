@@ -244,8 +244,6 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             obj_dict = models.storage.all()
         elif args[0] in HBNBCommand.classes:
-            print('in-----')
-            print(args[0])
             obj_dict = models.storage.all(HBNBCommand.classes[args[0]])
         else:
             print("** class doesn't exist **")
