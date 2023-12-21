@@ -7,12 +7,11 @@ import sqlalchemy
 from os import getenv
 import models
 
-
 class Place(BaseModel, Base):
-    """ A place to stay """
+    """Representation of Place """
     if models.storage_t == 'db':
         __tablename__ = 'places'
-        city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
+        city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         name = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=True)
@@ -22,6 +21,7 @@ class Place(BaseModel, Base):
         price_by_night = Column(Integer, nullable=False, default=0)
         latitude = Column(Float, nullable=True)
         longitude = Column(Float, nullable=True)
+
     else:
         city_id = ""
         user_id = ""
@@ -36,5 +36,5 @@ class Place(BaseModel, Base):
         amenity_ids = []
 
     def __init__(self, *args, **kwargs):
-        '''inits'''
+        """initializes Place"""
         super().__init__(*args, **kwargs)
