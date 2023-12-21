@@ -1,12 +1,9 @@
-#!/usr/bin/python3
-""" Place Module for HBNB project """
-from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, Float, Integer, ForeignKey
-from sqlalchemy.orm import relationship
-import sqlalchemy
-from os import getenv
+#!/usr/bin/python
+""" holds class Place"""
 import models
-
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
+from sqlalchemy.orm import relationship
 
 if models.storage_t == 'db':
     place_amenity = Table('place_amenity', Base.metadata,
@@ -18,6 +15,7 @@ if models.storage_t == 'db':
                                  ForeignKey('amenities.id', onupdate='CASCADE',
                                             ondelete='CASCADE'),
                                  primary_key=True))
+
 
 class Place(BaseModel, Base):
     """Representation of Place """
