@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Review module for the HBNB project """
 from models.base_model import BaseModel
-
+from sqlalchemy import Column, String, ForeignKey
 
 class Review(BaseModel):
     """ Review classto store review information """
@@ -15,4 +15,5 @@ class Review(BaseModel):
         user_id = ""
         text = ""
     def __init__(self, *args, **kwargs):
-        super().__init__(self, *args, **kwargs)
+        '''init'''
+        super().__init__(*args, **kwargs)
