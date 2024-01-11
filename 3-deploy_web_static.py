@@ -1,10 +1,21 @@
 #!/usr/bin/python3
-'''fabric deplay'''
-
-from fabric.api import put, run, env
+'''fabric;'''
+from datetime import datetime
+from fabric.api import *
 from os.path import exists
 env.hosts = ['52.3.243.233', '18.204.20.i81']
 
+def do_pack():
+    """do packing"""
+
+    tm = datetime.now()
+    arch = 'web_static_' + tm.strftime("%Y%m%d%H%M%S") + '.' + 'tgz'
+    local('mkdir -p versions')
+    lc = local('tar -cvzf versions/{} web_static'.format(arch))
+    if lc is not None:
+        return arch
+    else:
+        return None
 
 def do_deploy(archive_path):
     '''deploying'''
@@ -26,3 +37,11 @@ def do_deploy(archive_path):
         return True
     except ValueError:
         return False
+
+def deploy():
+    '''deply'''
+
+    archive_path = do_pack()
+    if archive_path is None:
+        return False
+    return do_deploy(archive_path)
