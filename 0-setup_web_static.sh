@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 #installing nginx and createing dir
 
 sudo apt-get -y update
