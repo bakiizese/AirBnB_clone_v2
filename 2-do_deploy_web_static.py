@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+# deploying
 from fabric.api import local, put, run, env
 from datetime import datetime
 
@@ -12,7 +12,6 @@ def do_deploy(archive_path):
     """
     try:
         archive = archive_path.split('/')[-1]
-        print(archive_path)
         path = '/data/web_static/releases/' + archive.strip('.tgz')
         current = '/data/web_static/current'
         put(archive_path, '/tmp')
@@ -23,7 +22,6 @@ def do_deploy(archive_path):
         run('rm -rf {}/web_static'.format(path))
         run('rm -rf {}'.format(current))
         run('ln -s {} {}'.format(path, current))
-        print('2')
         print('New version deployed!')
         return True
     except:
