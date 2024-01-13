@@ -52,6 +52,7 @@ def deploy():
         return False
     return do_deploy(archive_path)
 
+
 def do_clean(number=0):
     '''delete outofdate'''
 
