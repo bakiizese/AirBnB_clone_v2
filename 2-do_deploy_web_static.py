@@ -12,6 +12,7 @@ def do_deploy(archive_path):
     """
     try:
         archive = archive_path.split('/')[-1]
+        print(archive_path)
         path = '/data/web_static/releases/' + archive.strip('.tgz')
         current = '/data/web_static/current'
         put(archive_path, '/tmp')

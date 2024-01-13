@@ -22,6 +22,7 @@ def do_deploy(archive_path):
     '''deploying'''
 
     try:
+        archive_path = 'versions/' + archive_path
         archive = archive_path.split('/')[-1]
         path = '/data/web_static/releases/' + archive.strip('.tgz')
         current = '/data/web_static/current'
