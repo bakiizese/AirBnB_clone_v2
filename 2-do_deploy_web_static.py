@@ -14,7 +14,6 @@ def do_deploy(archive_path):
         archive = archive_path.split('/')[-1]
         path = '/data/web_static/releases/' + archive.strip('.tgz')
         current = '/data/web_static/current'
-        print(archive_path)
         put(archive_path, '/tmp')
         run('mkdir -p {}/'.format(path))
         run('tar -xzf /tmp/{} -C {}'.format(archive, path))
