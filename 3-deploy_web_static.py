@@ -4,7 +4,8 @@ from datetime import datetime
 from fabric.api import *
 from os.path import exists
 env.user = 'ubuntu'
-env.hosts = ['52.3.243.233', '18.204.20.i81']
+env.hosts = ['52.3.243.233', '18.204.20.81']
+
 
 def do_pack():
     """do packing"""
@@ -17,6 +18,7 @@ def do_pack():
         return arch
     else:
         return None
+
 
 def do_deploy(archive_path):
     '''deploying'''
@@ -36,11 +38,14 @@ def do_deploy(archive_path):
         run('ln -s {} {}'.format(path, current))
         print('New version deployed!')
         return True
-    except:
+    except Exception:
         return False
+
 
 def deploy():
     '''deply'''
 
     archive_path = do_pack()
+    if archive_path is None:
+        return False
     return do_deploy(archive_path)
