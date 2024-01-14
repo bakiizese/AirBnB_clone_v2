@@ -54,9 +54,10 @@ def deploy():
 
 
 def do_clean(number=0):
-    '''delete outofdate'''
+    '''clean'''
 
     number = 1 if int(number) == 0 else int(number)
+    
     archives = sorted(os.listdir("versions"))
     [archives.pop() for i in range(number)]
     with lcd("versions"):
