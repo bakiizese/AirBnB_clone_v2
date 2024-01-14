@@ -1,28 +1,31 @@
 #!/usr/bin/python3
-# deploying
-from fabric.api import local, put, run, env
-from datetime import datetime
+"""
+This is the 2-do_deploy_web_static.py module.
+This module distribute the static content (html, css, images) to the servers
+"""
 
-env.user = 'ubuntu'
+
+from fabric.api import put, run, env, task
+import os
 env.hosts = ['52.3.243.233', '18.204.20.81']
+env.user = 'ubuntu'
 
 
 def do_deploy(archive_path):
-    """Deploy the boxing package tgz file
-    """
+    """ This is the function for deploying the content """
     try:
-        archive = archive_path.split('/')[-1]
-        path = '/data/web_static/releases/' + archive.strip('.tgz')
-        current = '/data/web_static/current'
-        put(archive_path, '/tmp')
-        run('mkdir -p {}/'.format(path))
-        run('tar -xzf /tmp/{} -C {}'.format(archive, path))
-        run('rm /tmp/{}'.format(archive))
-        run('mv {}/web_static/* {}'.format(path, path))
-        run('rm -rf {}/web_static'.format(path))
-        run('rm -rf {}'.format(current))
-        run('ln -s {} {}'.format(path, current))
-        print('New version deployed!')
+        file_name = archive_path.split("/")[-1]
+        p = "/data/web_static/releases/" + file_name.strip(".tgz")
+        sym_link = "/data/web_static/current"
+        put(archive_path, "/tmp")
+        run("mkdir -p " + p)
+        run("tar -xzf /tmp/" + file_name + " -C " + p)
+        run("rm /tmp/" + file_name)
+        run("mv " + p + "/web_static/* " + p)    
+        run("rm -rf " + p + "/web_static")
+        run("rm -rf " + sym_link)
+        run("ln -s " + p + "/ " + sym_link)
+        print("New version deployed!")
         return True
-    except:
+    except Exception:
         return False
