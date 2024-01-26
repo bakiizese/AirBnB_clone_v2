@@ -1,7 +1,6 @@
 #!/usr/bin/python3
+'''tyring flask'''
 from flask import Flask
-'''firt time usign flask'''
-
 
 app = Flask(__name__)
 
@@ -9,7 +8,6 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def root():
     '''this is to return helloe hbnb'''
-
     return "Hello HBNB!"
 
 
