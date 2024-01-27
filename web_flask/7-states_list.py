@@ -1,26 +1,23 @@
 #!/usr/bin/python3
-"""
-    Python flask script to print a list of states
-"""
-
-from flask import Flask, render_template, g
+'''states_list'''
 from models import storage
-from models.state import State
-
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/states_list", strict_slashes=False)
-def state_list():
-    states = storage.all("State")
-    return render_template("7-states_list.html", states=states)
+def states_list():
+    '''route to states_list'''
+    st = storage.all("State")
+    return render_template('7-states_list.html', st=st)
 
 
 @app.teardown_appcontext
-def teardowndb(self):
+def teardown(self):
+    '''teardown close all'''
     storage.close()
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=False)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
