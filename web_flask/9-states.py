@@ -14,8 +14,8 @@ def states(id):
     name = "no"
     for stat in st.values():
         if stat.id == id:
-            name = stat.name
-    return render_template("9-states.html", st=st, id=id, name=name, stat=stat)
+            name = stat
+    return render_template("9-states.html", st=st, id=id, name=name)
 
 
 @app.teardown_appcontext
