@@ -11,11 +11,10 @@ app = Flask(__name__)
 def states(id):
     '''states with ids and with none'''
     st = storage.all("State")
+    name = "no"
     for stat in st.values():
         if stat.id == id:
             name = stat.name
-        else:
-            name = None
     return render_template("9-states.html", st=st, id=id, name=name, stat=stat)
 
 
