@@ -46,28 +46,7 @@
 			<section class="places">
 				<h1>Places</h1>
                                 {% for placess in place.values() %}
-				<article>
-					<div class="headline">
-						<h2>{{placess.name}}</h2>
-						<div class="price_by_night">{{placess.price_by_night}}</div>
-					</div>
-					<div class="information">
-						<div class="max_guest">
-							<div class="guest_icon"></div>
-							<p>{{placess.max_guest}} Guests</p>
-						</div>
-						<div class="number_rooms">
-							<div class="bed_icon"></div>
-							<p>{{placess.number_rooms}} Bedroom</p>
-						</div>
-						 <div class="number_bathrooms">
-							<div class="bath_icon"></div>
-							<p>{{placess.number_bathrooms}} Bathroom</p>
-						</div>
-					</div>
-					<div class="user"><b>Owner</b>: {{placess.user_id.first_name}} {{placess.user_id.last_name}}</div>
-					<div class="description">{{placess.description}}</div>
-				</article>
+                                        <h1>placess</h1>
                                 {% endfor %}
 			</section>
                 </div>
