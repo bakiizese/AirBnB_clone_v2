@@ -9,11 +9,11 @@ app = Flask(__name__)
 @app.route("/hbnb", strict_slashes=False)
 def hbnbs():
     '''route to whole airbnb'''
-    #states = storage.all("State")
-    #ame = storage.all("Amenity")
-    #place = storage.all("Place")
-    #return render_template('100-hbnb.html', states=states, ame=ame, place=place)
-    return 'hello'
+    states = storage.all("State")
+    ame = storage.all("Amenity")
+    place = storage.all("Place")
+    return render_template('100-hbnb.html', states=states, ame=ame, place=place)
+
 
 @app.teardown_appcontext
 def teardown(self):
