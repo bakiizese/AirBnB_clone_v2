@@ -7,13 +7,11 @@ app = Flask(__name__)
 
 
 @app.route("/hbnb_filters", strict_slashes=False)
-def hbnb():
-    '''real airbnb'''
-    return render_template('10-hbnb_filters.html')
-
-@app.route("/")
-def trys():
-    return "Hello bakii"
+def states_list():
+    '''route to states_list'''
+    states = storage.all("State")
+    ame = storage.all("Amenity")
+    return render_template('10-hbnb_filters.html', states=states, ame=ame)
 
 
 @app.teardown_appcontext
