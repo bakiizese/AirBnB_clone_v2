@@ -6,12 +6,13 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route("/hbnb_filters", strict_slashes=False)
+@app.route("/hbnb", strict_slashes=False)
 def states_list():
-    '''route to states_list'''
+    '''route to whole airbnb'''
     states = storage.all("State")
     ame = storage.all("Amenity")
-    return render_template('10-hbnb_filters.html', states=states, ame=ame)
+    place = storage.all("Place")
+    return render_template('100-hbnb.html', states=states, ame=ame, place=place)
 
 
 @app.teardown_appcontext
