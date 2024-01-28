@@ -46,9 +46,9 @@
 			<section class="places">
 				<h1>Places</h1>
                                 {% for use in user.values() %}
-                                        {% for i in use.places %}
-                                                <h1>{{i.price_by_night}}</h1>
-                                        {% endfor %}
+                                        
+                                         <h1>{{use.places.price_by_night}}</h1>
+                                
                                 {% endfor %}
 			</section>
                 </div>
