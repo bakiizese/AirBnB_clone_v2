@@ -1,0 +1,361 @@
+<!DOCTYPE html> 
+<html lang="en">
+        <head>
+                <title>AirBnB clone</title>
+
+                <link rel="shortcut icon" href="../static/images/icon.ico" > 
+
+                <link rel="stylesheet" href="../static/styles/4-common.css"/>
+                <link rel="stylesheet" href="../static/styles/3-header.css"/>
+                <link rel="stylesheet" href="../static/styles/3-footer.css"/>
+                <link rel="stylesheet" href="../static/styles/6-filters.css"/>
+                <link rel="stylesheet" href="../static/styles/8-places.css"/>
+        </head>
+    <body>
+                <header>
+                        <div id="header_logo"></div>
+                </header>
+                <div class="container">
+                        <section class="filters">
+                                <button>Search</button>
+                                <div class="locations">
+                                        <h3>States</h3>
+                                        <ul class="popover">
+
+                                                <li><h2>Alabama</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Akron</h4></li>
+
+                                                                        <li><h4>Babbie</h4></li>
+
+                                                                        <li><h4>Calera</h4></li>
+
+                                                                        <li><h4>Fairfield</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Arizona</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Douglas</h4></li>
+
+                                                                        <li><h4>Kearny</h4></li>
+
+                                                                        <li><h4>Tempe</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>California</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Fremont</h4></li>
+
+                                                                        <li><h4>Napa</h4></li>
+
+                                                                        <li><h4>San&nbsp;Francisco</h4></li>
+
+                                                                        <li><h4>San&nbsp;Jose</h4></li>
+
+                                                                        <li><h4>Sonoma</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Colorado</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Denver</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Florida</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Miami</h4></li>
+
+                                                                        <li><h4>Orlando</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Hawaii</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Honolulu</h4></li>
+
+                                                                        <li><h4>Kailua</h4></li>
+
+                                                                        <li><h4>Pearl&nbsp;city</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Illinois</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Chicago</h4></li>
+
+                                                                        <li><h4>Joliet</h4></li>
+
+                                                                        <li><h4>Naperville</h4></li>
+
+                                                                        <li><h4>Peoria</h4></li>
+
+                                                                        <li><h4>Urbana</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Louisiana</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Baton&nbsp;rouge</h4></li>
+
+                                                                        <li><h4>Lafayette</h4></li>
+
+                                                                        <li><h4>New&nbsp;Orleans</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Minnesota</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Saint&nbsp;Paul</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Mississippi</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Jackson</h4></li>
+
+                                                                        <li><h4>Meridian</h4></li>
+
+                                                                        <li><h4>Tupelo</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                                <li><h2>Oregon</h2>
+                                                        <ul>
+
+                                                                        <li><h4>Eugene</h4></li>
+
+                                                                        <li><h4>Portland</h4></li>
+
+                                                        </ul>
+                                                </li>
+
+                                        </ul>
+                                </div>
+                                <div class="filter_amenities">
+                                        <h3>Amenities</h3>
+                                        <ul class="popover">
+
+                                                <li><h4>
+                                                        24-hour&nbsp;check-in</h4></li>
+
+                                                <li><h4>
+                                                        Air&nbsp;conditioning</h4></li>
+
+                                                <li><h4>
+                                                        Breakfast</h4></li>
+
+                                                <li><h4>
+                                                        Buzzer/wireless&nbsp;intercom</h4></li>
+
+                                                <li><h4>
+                                                        Cable&nbsp;TV</h4></li>
+
+                                                <li><h4>
+                                                        Carbon&nbsp;monoxide&nbsp;detector</h4></li>
+
+                                                <li><h4>
+                                                        Cat(s)</h4></li>
+
+                                                <li><h4>
+                                                        Dog(s)</h4></li>
+
+                                                <li><h4>
+                                                        Doorman</h4></li>
+
+                                                <li><h4>
+                                                        Doorman&nbsp;Entry</h4></li>
+
+                                                <li><h4>
+                                                        Dryer</h4></li>
+
+                                                <li><h4>
+                                                        Elevator&nbsp;in&nbsp;building</h4></li>
+
+                                                <li><h4>
+                                                        Essentials</h4></li>
+
+                                                <li><h4>
+                                                        Family/kid&nbsp;friendly</h4></li>
+
+                                                <li><h4>
+                                                        Fire&nbsp;extinguisher</h4></li>
+
+                                                <li><h4>
+                                                        First&nbsp;aid&nbsp;kit</h4></li>
+
+                                                <li><h4>
+                                                        Free&nbsp;parking&nbsp;on&nbsp;premises</h4></li>
+
+                                                <li><h4>
+                                                        Gym</h4></li>
+
+                                                <li><h4>
+                                                        Hair&nbsp;dryer</h4></li>
+
+                                                <li><h4>
+                                                        Hangers</h4></li>
+
+                                                <li><h4>
+                                                        Heating</h4></li>
+
+                                                <li><h4>
+                                                        Hot&nbsp;tub</h4></li>
+
+                                                <li><h4>
+                                                        Indoor&nbsp;fireplace</h4></li>
+
+                                                <li><h4>
+                                                        Internet</h4></li>
+
+                                                <li><h4>
+                                                        Iron</h4></li>
+
+                                                <li><h4>
+                                                        Keypad</h4></li>
+
+                                                <li><h4>
+                                                        Kitchen</h4></li>
+
+                                                <li><h4>
+                                                        Laptop&nbsp;friendly&nbsp;workspace</h4></li>
+
+                                                <li><h4>
+                                                        Lock&nbsp;on&nbsp;bedroom&nbsp;door</h4></li>
+
+                                                <li><h4>
+                                                        Lockbox</h4></li>
+
+                                                <li><h4>
+                                                        Other&nbsp;pet(s)</h4></li>
+
+                                                <li><h4>
+                                                        Pets&nbsp;allowed</h4></li>
+
+                                                <li><h4>
+                                                        Pets&nbsp;live&nbsp;on&nbsp;this&nbsp;property</h4></li>
+
+                                                <li><h4>
+                                                        Pool</h4></li>
+
+                                                <li><h4>
+                                                        Private&nbsp;entrance</h4></li>
+
+                                                <li><h4>
+                                                        Private&nbsp;living&nbsp;room</h4></li>
+
+                                                <li><h4>
+                                                        Safety&nbsp;card</h4></li>
+
+                                                <li><h4>
+                                                        Self&nbsp;Check-In</h4></li>
+
+                                                <li><h4>
+                                                        Shampoo</h4></li>
+
+                                                <li><h4>
+                                                        Smartlock</h4></li>
+
+                                                <li><h4>
+                                                        Smoke&nbsp;detector</h4></li>
+
+                                                <li><h4>
+                                                        Smoking&nbsp;allowed</h4></li>
+
+                                                <li><h4>
+                                                        Suitable&nbsp;for&nbsp;events</h4></li>
+
+                                                <li><h4>
+                                                        TV</h4></li>
+
+                                                <li><h4>
+                                                        Washer</h4></li>
+
+                                                <li><h4>
+                                                        Wheelchair&nbsp;accessible</h4></li>
+
+                                                <li><h4>
+                                                        Wireless&nbsp;Internet</h4></li>
+
+                                        </ul>
+                                </div>
+
+                        </section>
+                                                                                                                               <section class="places">
+
+<h1>Places</h1>
+
+<article>
+
+        <div class="headline">
+
+               <h2></h2>
+
+               <div class="price_by_night"></div>
+
+        </div>
+
+        <div class="information">
+
+               <div class="max_guest">
+
+                                                                                                                               <div class="guest_icon"></div>
+
+                                                                                                                               <p> Guests</p>
+
+               </div>
+
+               <div class="number_rooms">
+
+                                                                                                                               <div class="bed_icon"></div>
+
+                                                                                                                               <p> Bedroom</p>
+
+               </div>
+
+                <div class="number_bathrooms">
+
+                                                                                                                               <div class="bath_icon"></div>
+
+                                                                                                                               <p> Bathroom</p>
+
+               </div>
+
+        </div>
+
+        <div class="user"><b>Owner</b>: John Lennon</div>
+
+        <div class="description">
+                    </div>
+
+</article>
+                                                                                                                               <
+</section>
+                </div>
+                <footer>
+                        <p>Holberton School</p>
+                </footer>
+        </body>
+</html>
