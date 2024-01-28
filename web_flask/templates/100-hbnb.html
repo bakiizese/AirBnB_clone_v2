@@ -45,10 +45,10 @@
                         </section>
 			<section class="places">
 				<h1>Places</h1>
-                                {% for use in user.values() %}
-                                        
-                                         <h1>{{use.places.price_by_night}}</h1>
-                                
+                                {% for p in place.values() %}
+                                        {% for i in p.user_id %}
+                                                <h1>{{i.first_name}}</h1>
+                                        {% endfor %}
                                 {% endfor %}
 			</section>
                 </div>
