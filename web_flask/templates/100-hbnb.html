@@ -46,7 +46,9 @@
 			<section class="places">
 				<h1>Places</h1>
                                 {% for pl in place.values() %}
-                                        <h1>{{pl.user_id.first_name}}</h1>
+                                        {% for i in pl.user_id.values() %}
+                                                <h1>{{i.first_name}}</h1>
+                                        {% endfor %}
                                 {% endfor %}
 			</section>
                 </div>
