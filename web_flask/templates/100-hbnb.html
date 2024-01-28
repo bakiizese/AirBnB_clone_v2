@@ -45,28 +45,28 @@
                         </section>
 			<section class="places">
 				<h1>Places</h1>
-                                {% for plac in place.values() %}
+                                {% for users in user.values() %}
 				<article>
 					<div class="headline">
-						<h2>{{plac.name}}</h2>
-						<div class="price_by_night">{{plac.price_by_night}}</div>
+						<h2>{{users.places.name}}</h2>
+						<div class="price_by_night">{{users.places.price_by_night}}</div>
 					</div>
 					<div class="information">
 						<div class="max_guest">
 							<div class="guest_icon"></div>
-							<p>{{plac.max_guest}} Guests</p>
+							<p>{{users.places.max_guest}} Guests</p>
 						</div>
 						<div class="number_rooms">
 							<div class="bed_icon"></div>
-							<p>{{plac.number_rooms}} Bedroom</p>
+							<p>{{users.places.number_rooms}} Bedroom</p>
 						</div>
 						 <div class="number_bathrooms">
 							<div class="bath_icon"></div>
-							<p>{{plac.number_bathrooms}} Bathroom</p>
+							<p>{{users.places.number_bathrooms}} Bathroom</p>
 						</div>
 					</div>
-					<div class="user"><b>Owner</b>: John Lennon</div>
-					<div class="description">{plac.description}}
+					<div class="user"><b>Owner</b>: {{users.first_name}} {{users.last_name}}</div>
+					<div class="description">{users.places.description}}
                     </div>
 				</article>
                                 {% endfor %}
